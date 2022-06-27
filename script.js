@@ -29,20 +29,20 @@ class User {
   constructor(name, emailAddress){
     this.name = name,
     this.email = emailAddress,
-    this.account = new BankAccount(balance=0, interestRate=0.1)
+    this.account = new BankAccount()
   }
   makeDeposit(amount){
-    this.account.deposit += amount
+    this.account.deposit(amount)
     return this
   }
 
   makeWithdrawal(amount){
-    this.account.withdraw -= amount
+    this.account.withdraw(amount)
     return this
   }
 
   displayBalance(){
-    console.log(this.name +' has ' + this.account.displayAccountInfo + ' dollars in the bank')
+    console.log(this.name +' has ' + this.account.balance + ' dollars in the bank')
   }
   transferMoney(amount, account){
     this.accountBalance -= amount
@@ -50,11 +50,11 @@ class User {
   }
 }
 
-const Mickey = new BankAccount (balance=90, interestRate=0.1)
+const Mickey = new User ('Christian', 'chris@js.com')
 
 // const Minnie = new BankAccount(100, 0.1)
 // Mickey.deposit(100).deposit(100).deposit(100).withdraw(10).yieldInterest(0.1).displayAccountInfo()
 // Minnie.deposit(1000).deposit(1000).withdraw(100).withdraw(100).withdraw(100).withdraw(100).yieldInterest(0.1).displayAccountInfo()
 // console.log(Minnie.balance)
-console.log(Mickey.displayAccountInfo())
+console.log(Mickey.makeDeposit(100).displayBalance())
 
