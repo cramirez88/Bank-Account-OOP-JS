@@ -44,10 +44,10 @@ class User {
   displayBalance(){
     console.log(this.name +' has ' + this.account.balance + ' dollars in the bank')
   }
-  transferMoney(amount, account){
-    this.accountBalance -= amount
-    account.accountBalance += amount
-  }
+  // transferMoney(amount, account){
+  //   this.accountBalance -= amount
+  //   account.accountBalance += amount
+  // }
 }
 
 const Mickey = new User ('Christian', 'chris@js.com')
