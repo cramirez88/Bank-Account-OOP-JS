@@ -27,4 +27,6 @@ class BankAccount {
 const Mickey = new BankAccount( 0, 0.1)
 const Minnie = new BankAccount(100, 0.1)
 Mickey.deposit(100).deposit(100).deposit(100).withdraw(10).yieldInterest(0.1).displayAccountInfo()
+Minnie.deposit(1000).deposit(1000).withdraw(100).withdraw(100).withdraw(100).withdraw(100).yieldInterest(0.1).displayAccountInfo()
+console.log(Minnie.balance)
 
